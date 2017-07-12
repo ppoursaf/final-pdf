@@ -6,7 +6,7 @@
 /*   By: ppoursaf <ppoursaf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 01:07:22 by ppoursaf          #+#    #+#             */
-/*   Updated: 2017/07/12 02:42:02 by ppoursaf         ###   ########.fr       */
+/*   Updated: 2017/07/12 03:45:37 by ppoursaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,6 @@ void	number_of_number(char *argv, t_swag *sw)
 	a = 0;
 	g = -1;
 	ft_open(sw, argv);
-	if (sw->fd <= 0)
-	{
-		ft_putstr("NTM T UN BOLOSS\n");
-		exit(EXIT_SUCCESS);
-	}
 	while (get_next_line(sw->fd, &sw->line))
 	{
 		if (g++ == 0)

@@ -6,7 +6,7 @@
 /*   By: ppoursaf <ppoursaf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 23:19:00 by ppoursaf          #+#    #+#             */
-/*   Updated: 2017/07/12 03:34:37 by ppoursaf         ###   ########.fr       */
+/*   Updated: 2017/07/12 03:48:18 by ppoursaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@ void	ft_open(t_swag *sw, char *argv)
 {
 	if (!(sw->fd = open(argv, O_RDONLY)))
 		return ;
+	if (sw->fd <= 0)
+	{
+		if (sw->alt == 0)
+			ft_putstr("FAI ATTENTION COUSIN\n");
+		else if (sw->alt == 1)
+			ft_putstr("wallah tu fai l'malin\n");
+		else
+			ft_putstr("TU ARRETES WALLAH JVAI TE TAPPER");
+		sw->alt++;
+		exit(EXIT_SUCCESS);
+	}
 }
 
 void	ft_relx(t_swag *sw)
@@ -67,7 +78,7 @@ void	ft_rely(t_swag *sw)
 	{
 		while (x < sw->cpt)
 		{
-			sw->ytab[y][x] = sw->y - (x * sw->zoomp) + (y * sw->zoomp - sw->alt) -\
+			sw->ytab[y][x] = sw->y - (x * sw->zoomp) + (y * sw->zoomp) -\
 				(sw->realtab[y][x] * sw->zoomp);
 			x++;
 		}

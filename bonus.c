@@ -6,7 +6,7 @@
 /*   By: ppoursaf <ppoursaf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 00:08:44 by ppoursaf          #+#    #+#             */
-/*   Updated: 2017/07/12 03:32:57 by ppoursaf         ###   ########.fr       */
+/*   Updated: 2017/07/12 03:48:36 by ppoursaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,6 @@ int		my_first_bonus(int keycode, t_swag *sw)
 		sw->zoomp += 5;
 	else if (keycode == MOINS)
 		sw->zoomp -= 5;
-	else if (keycode == 91)
-		sw->alt += 5;
-	else if (keycode == 84)
-		sw->alt -= 5;
 	ft_join_everything(sw, sw->argv);
 	return (0);
 }
